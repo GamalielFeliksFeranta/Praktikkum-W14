@@ -11,31 +11,57 @@ namespace ConsoleApp3
         public static void Prima(int input)
         {
             int faktorial = 0;
-            for (int i = 1; i <= input; i++)
+            int sapi = 0;
+            int babi = 0;
+            int monyet = 0;
+            for (int i = 1; i <= 2000; i++)
             {
-                for (int j = 1; j <= i; j++)
+                if (monyet == 0)
                 {
-                    if (i % j == 0)
-                    {
-                        faktorial++;
-                    }
-                }
-                if (faktorial == 2)
-                {
-                    Console.Write(i + " ");
-                }
-                faktorial = 0;
 
+
+                    for (int j = 1; j <= i; j++)
+                    {
+                        if (i % j == 0)
+                        {
+                            faktorial++;
+                        }
+                    }
+                    if (faktorial == 2)
+                    {
+                        Console.Write(i + " ");
+                        sapi++;
+                        if (sapi == input)
+                        {
+                            Console.WriteLine();
+                            sapi = 0;
+                            babi++;
+                            if (babi == input)
+                            {
+                                monyet = 1;
+                            }
+                        }
+                    }
+                    faktorial = 0;
+
+                   
+                }                
             }
-            Console.WriteLine("");
-        }
+         }
+        
         public static void nonPrima(int input)
         {
             int count = 0;
             int faktorial1 = 0;
-            
-                for (int i = 1; i <= input; i++)
+            int sapi = 0;
+            int babi = 0;
+            int monyet = 0;
+
+            for (int i = 1; i <= 2000; i++)
+            {
+                if (monyet == 0)
                 {
+
                     for (int j = 1; j <= i; j++)
                     {
                         if (i % j == 0)
@@ -45,11 +71,26 @@ namespace ConsoleApp3
                     }
                     if (faktorial1 != 2)
                     {
-                        Console.Write(i + " ");
+                        Console.Write(string.Format("{0,5}", i));
+                        sapi++;
+                        if (sapi == input)
+                        {
+                            Console.WriteLine();
+                            sapi = 0;
+                            babi++;
+                            if (babi == input)
+                            {
+                                monyet = 1;
+                            }
+                        }
                     }
-                    faktorial1 = 0;
+                }
 
+                faktorial1 = 0;
                 
+
+
+
             }
         }
 
